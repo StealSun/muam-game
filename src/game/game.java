@@ -1,19 +1,56 @@
-package game;
+package game; 
+// Подключения необходимых библиотек 
 
-import javax.swing.JOptionPane;
+import javax.swing.*; // Работа с формами
 
-// Game main Class
-public class game {
-    // run game
-    public static void main(String[] args) {
-
-        // Select difficulty
-        String res = JOptionPane.showInputDialog(null, "Р’РІРµРґРёС‚Рµ СЃР»РѕР¶РЅРѕСЃС‚СЊ (РћС‚ 1 РґРѕ 7):", "РЎР»РѕР¶РЅРѕСЃС‚СЊ РёРіСЂС‹", 1);
-
-        int difficulty = Integer.parseInt(res);
-
-        if ((difficulty >= 1) & (difficulty <= 7)) {
-            window window = new window(difficulty);
-        }
-    }
+// Главный класс игры 
+public class game { 
+	// Главный метод, который запускает игру
+	public static void main(String[] args) { 
+		
+		// Вызов диалогового окна для ввода сложности игры
+		String rez = JOptionPane.showInputDialog(null, "Input difficulty (1 - 9):", "Difficulty", 1);
+		
+		// Помещение результата выбора в переменную целого типа
+		int slogn = Integer.parseInt(rez)/*.charAt(0) - '0'*/;
+		
+		// Проверка, что введена цифра от 1 до 7
+		if ((slogn >= 1)&&(slogn <= 9)){
+			// Создание окна, в котором находится игровое поле
+			okno window = new okno(slogn);
+		} 
+	} 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 01. Изменить рисунки шапки, фонов.
+// 02. Сделать передвижение шапки более плавным
+// 03. Сделать передвижение подарка по вертикали и горизонтали
+// 04. Расширить область до разрешения 1440х1980
+// 05. Увеличить скорость падения подарков
+// 06. Увеличить максимальное количество подарков до 9
+// 07. Сделайте счётчик количества пойманных подарков
+// 08. Сделать движение подарка на один пиксель (2 кнопки) и на 30 пикселей (2 кнопки)
+// 09. Подсчёт количества пойманных подарков
+// 10. Подсчёт количества прожитых секунд
